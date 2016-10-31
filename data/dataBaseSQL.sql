@@ -1,3 +1,5 @@
+CREATE DATABASE pypDB;
+
 CREATE TABLE area_estrategica (
   id int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   nombre varchar(255) NOT NULL
