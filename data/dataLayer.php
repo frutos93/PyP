@@ -25,7 +25,8 @@ function loadTeacherInformation()
             while ($row = $result->fetch_assoc()) {
                 array_push($response, array("id" => $row["id"], "nombre" => $row["nombre"],"correo" => $row["correo"]));
             }
-            
+            var_dump(json_encode($response));
+            echo json_last_error();
             return $response;
         } else {
             die("There was an error loading the teachers1");

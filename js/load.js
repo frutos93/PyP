@@ -2,6 +2,7 @@ $(document).ready(function () {
     var dataToSend = {
         "action": "LOAD_TEACH"
     }
+    
     $.ajax({
         url: "data/applicationLayer.php"
         , type: "POST"
@@ -10,7 +11,7 @@ $(document).ready(function () {
         , success: function (jsonResponse) {
             var newHTMLContent = "";
             $.each(jsonResponse, function (index) {
-                newHTMLContent += "<tr><td>" + jsonData[index].id + "</td>" + "<td>" + jsonData[index].nombre + "</td><td>" + jsonData[index].correo + "</td></tr>";
+                newHTMLContent += "<tr><td>" + jsonResponse.id + "</td>" + "<td>" + jsonResponse.nombre + "</td><td>" + jsonResponse.correo + "</td></tr>";
             });
             $("#tableBody").append(newHTMLContent);
         }
