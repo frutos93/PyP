@@ -40,6 +40,7 @@ $(document).ready(function () {
     var dataToSend = {
         "action": "LOAD_TEACH"
     }
+
     $.ajax({
         url: "data/applicationLayer.php"
         , type: "POST"
@@ -48,7 +49,7 @@ $(document).ready(function () {
         , success: function (jsonResponse) {
             var newHTMLContent = "";
             $.each(jsonResponse, function (index) {
-                newHTMLContent += "<tr><td>" + jsonResponse[index].id + "</td>" + "<td>" + jsonResponse[index].nombre + "</td><td>" + jsonResponse[index].correo + "</td></tr>";
+                newHTMLContent += "<tr><td><a class='teacherInfo' href='#' data-id='"+jsonResponse[index].id +"'>" + jsonResponse[index].nombre + "</td><td>" + jsonResponse[index].correo + "</td></tr>";
             });
             $("#tableBody").append(newHTMLContent);
             $('#teacherTable').DataTable();
@@ -57,4 +58,6 @@ $(document).ready(function () {
             console.log(errorMsg);
         }
     });
+    $('.teacherInfo').click(function)
+
 });
