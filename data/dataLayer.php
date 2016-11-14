@@ -76,4 +76,24 @@ function loadAreaInvestigacion(){
     }
 }
 
+function loadTeacherProfile($id){
+    $conn = connectionToDataBase();
+    if($conn != null){
+        $sql = "SELECT nombre, oficina, telefono, correo FROM profesor WHERE id = '$id'";
+        $result = $conn->query($sql);
+        if($result->num_rows>0){
+            $response = array();
+            while($row = $result -> fetch_assoc()){
+                array_push($response, array("nombre"=>$row['nombre'],'oficina'=>$row['oficina'],'telefono'=>$row['telefono'], 'correo'=>$row['correo']));
+            }
+            return $response;
+        } else{
+            die('There was an error loading the teacher profile2');
+        }
+    }
+    else{
+        die('There was an error with the database connection');
+    }
+}
+
 ?>

@@ -6,14 +6,14 @@ CREATE TABLE area_estrategica (
 );
 
 INSERT INTO area_estrategica (id,nombre) VALUES
-(2, 'Biotecnologia'),
-(3, 'Educacion, Humanidades y Ciencias Sociales'),
-(4, 'Mecatronica'),
-(5, 'Medicina'),
-(10, 'Negocios'),
-(11, 'Politica Publica'),
-(12, 'Tecnologias de Informacion, Electronica y Comunicaciones'),
-(13, 'Tecnologias Sustentables');
+(1, 'Biotecnologia'),
+(2, 'Educacion, Humanidades y Ciencias Sociales'),
+(3, 'Mecatronica'),
+(4, 'Medicina'),
+(5, 'Negocios'),
+(6, 'Politica Publica'),
+(7, 'Tecnologias de Informacion, Electronica y Comunicaciones'),
+(8, 'Tecnologias Sustentables');
 
 CREATE TABLE escuela(
   id int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -21,11 +21,11 @@ CREATE TABLE escuela(
 );
 
 INSERT INTO escuela (id, nombre) VALUES
-(4, 'Escuela de Ingenieria y Ciencias'),
-(5, 'Escuela de Educacion, Humanidades y Ciencias Sociales\r\n'),
-(6, 'EGADE Business School'),
-(7, 'Escuela de Gobierno y Transformacion Publica'),
-(8, 'Escuela de Medicina');
+(1, 'Escuela de Ingenieria y Ciencias'),
+(2, 'Escuela de Educacion, Humanidades y Ciencias Sociales\r\n'),
+(3, 'EGADE Business School'),
+(4, 'Escuela de Gobierno y Transformacion Publica'),
+(5, 'Escuela de Medicina');
 
 CREATE TABLE grupo_investigacion (
   id int(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -108,7 +108,6 @@ CREATE TABLE profesor (
 );
 
 INSERT INTO profesor (id, id_grupo_investigacion, nombre, oficina, telefono, correo) VALUES
-(2, 1, 'Teno', 'A3 301', 'abc 123', 'geteca@gmail.com'),
 (3, 31, 'Bryan William Husted Corregan', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'bhusted@itesm.mx'),
 (4, 23, 'Dora Elvira Garcia Gonzalez', 'A3 301', '+52 (55) 5483 2020', 'dora.garcia@itesm.mx'),
 (5, 22, 'Francisco Javier Carrillo Gamboa', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'fjcarrillo@itesm.mx'),

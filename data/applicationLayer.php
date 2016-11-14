@@ -16,6 +16,9 @@ switch ($action) {
     case "LOAD_AREA":
         loadArea();
         break;
+    case "LOAD_PROFILE":
+        loadProfile();
+        break;
 }
 
 function loadTeachers(){
@@ -46,5 +49,17 @@ function loadArea(){
     else{
         die("There was an error loading the invetigation areas");
     }
+}
+
+function loadProfile(){
+    $id = $_POST["id"];
+    $result = loadTeacherProfile($id);
+    if($result){
+        echo json_encode($result);
+    }
+    else{
+        die("There was an error loading the teacher profile");
+    }
+    
 }
 ?>

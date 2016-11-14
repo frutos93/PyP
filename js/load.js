@@ -7,14 +7,14 @@ $(document).ready(function () {
         type: "POST",
         data: dataToSend,
         dataType: "json",
-        success: function (jsonResponse){
+        success: function (jsonResponse) {
             var newHTMLContent = '';
-            $.each(jsonResponse, function(index){
+            $.each(jsonResponse, function (index) {
                 newHTMLContent += "<tr><td>" + jsonResponse[index].nombre + "</td></tr>";
             });
             $('#schoolBody').append(newHTMLContent);
-        }, error:function(errorMsg){
-            
+        }, error: function (errorMsg) {
+
         }
     });
 
@@ -26,17 +26,17 @@ $(document).ready(function () {
         type: "POST",
         data: dataToSend,
         dataType: "json",
-        success: function (jsonResponse){
+        success: function (jsonResponse) {
             var newHTMLContent = '';
-            $.each(jsonResponse, function(index){
+            $.each(jsonResponse, function (index) {
                 newHTMLContent += "<tr><td>" + jsonResponse[index].nombre + "</td></tr>";
             });
             $('#areaBody').append(newHTMLContent);
-        }, error:function(errorMsg){
-            
+        }, error: function (errorMsg) {
+
         }
     });
-    
+
     var dataToSend = {
         "action": "LOAD_TEACH"
     }
@@ -49,7 +49,7 @@ $(document).ready(function () {
         , success: function (jsonResponse) {
             var newHTMLContent = "";
             $.each(jsonResponse, function (index) {
-                newHTMLContent += "<tr><td><a class='teacherInfo' href='#' data-id='"+jsonResponse[index].id +"'>" + jsonResponse[index].nombre + "</td><td>" + jsonResponse[index].correo + "</td></tr>";
+                newHTMLContent += "<tr><td><a class='teacherInfo' data-id='" + jsonResponse[index].id + "'>" + jsonResponse[index].nombre + "</a></td><td>" + jsonResponse[index].correo + "</td></tr>";
             });
             $("#tableBody").append(newHTMLContent);
             $('#teacherTable').DataTable();
@@ -58,6 +58,5 @@ $(document).ready(function () {
             console.log(errorMsg);
         }
     });
-    $('.teacherInfo').click(function)
 
 });
