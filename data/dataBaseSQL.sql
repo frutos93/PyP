@@ -104,32 +104,36 @@ CREATE TABLE profesor (
   nombre varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   oficina varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   telefono varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  correo varchar(255) NOT NULL
+  correo varchar(255) NOT NULL,
+    username varchar(50) NOT NULL,
+    passwrd varchar(50) NOT NULL
 );
 
-INSERT INTO profesor (id, id_grupo_investigacion, nombre, oficina, telefono, correo) VALUES
-(3, 31, 'Bryan William Husted Corregan', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'bhusted@itesm.mx'),
-(4, 23, 'Dora Elvira Garcia Gonzalez', 'A3 301', '+52 (55) 5483 2020', 'dora.garcia@itesm.mx'),
-(5, 22, 'Francisco Javier Carrillo Gamboa', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'fjcarrillo@itesm.mx'),
-(6, 25, 'Rajagopal Rajagopal', 'A3 301', '+52 (55) 5483 2221', 'rajagopal@itesm.mx'),
-(7, 26, 'Ajnesh Prasad', 'A3 301', '+52 (55) 9177 7673', 'prasad@itesm.mx'),
-(8, 27, 'Anabella del Rosario Davila Martinez', 'A3 301', '+52 (81) 8625 6000 ext. 6150', 'anabella.davila@itesm.mx'),
-(9, 20, 'Blanca G. Lopez Morales', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'blopez@itesm.mx'),
-(10, 23, 'Ismael Aguilar Barajas', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'iaguilar@itesm.mx'),
-(11, 24, 'Javier Francisco Reynoso Javier', 'A3 301', '+52 (81) 8625 6000 ext. 6179', 'jreynoso@itesm.mx'),
-(12, 30, 'Jose Antonio Nunez Mora ', 'A3 301', '+52 (55) 5483 2240', 'janm@itesm.mx'),
-(13, 22, 'Jose Heriberto Garcia Pena', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'jhgarcia@itesm.mx'),
-(14, 20, 'Maria de la Cruz Castro Ricalde', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'maricruz.castro@itesm.mx'),
-(15, 20, 'Pol Popovic Karic', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'pol.popovic@itesm.mx'),
-(16, 25, 'Raquel Minerva Castano Gonzalez', 'A3 301', '+52 (81) 8625 6000 ext. 6177', 'rcastano@itesm.mx'),
-(17, 30, 'Rene Cabral Torres', 'A3 301', '+52 (81) 8328 4170', 'rcabral@itesm.mx'),
-(18, 30, 'Roberto Joaquin Santillan Salgado', 'A3 301', '+52 (81) 8625 6000 ext. 6035', 'roberto.santillan@itesm.mx'),
-(19, 31, 'Carlos Scheel Mayenberger', 'A3 301', '+52 (81) 8625 6174', 'cscheel@itesm.mx'),
-(20, 31, 'Consuelo Adelaida Garcia de la Torre', 'A3 301', '+52 (81) 8625 6000 ext. 6168', 'cogarcia@itesm.mx'),
-(21, 23, 'Daniel Carrasco Brihuega', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'dcarrascob@itesm.mx'),
-(22, 19, 'David Jamile Sarquis Ramirez', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'david.sarquis@itesm.mx'),
-(23, 19, 'Dejan Mihailovic Nikolajevic', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'dmihailo@itesm.mx'),
-(24, 25, 'Edgar Antonio Centeno Velazquez', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'ecenteno@itesm.mx');
+INSERT INTO profesor (id, id_grupo_investigacion, nombre, oficina, telefono, correo, username, passwrd) VALUES
+(2, 1, 'Teno', 'A3 301', 'abc 123', 'geteca@gmail.com', 'tenoblanco123', 'tenodark'),
+(3, 31, 'Bryan William Husted Corregan', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'bhusted@itesm.mx', 'brywill61', 'chocolatte'),
+(4, 23, 'Dora Elvira Garcia Gonzalez', 'A3 301', '+52 (55) 5483 2020', 'dora.garcia@itesm.mx', 'dorarara20', 'diamondcrash'),
+(5, 22, 'Francisco Javier Carrillo Gamboa', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'fjcarrillo@itesm.mx', 'javigambo46', 'liquidance'),
+(6, 25, 'Rajagopal Rajagopal', 'A3 301', '+52 (55) 5483 2221', 'rajagopal@itesm.mx', 'rajaraja', 'allnightblues'),
+(7, 26, 'Ajnesh Prasad', 'A3 301', '+52 (55) 9177 7673', 'prasad@itesm.mx', 'neshpras', 'passgambit'),
+(8, 27, 'Anabella del Rosario Davila Martinez', 'A3 301', '+52 (81) 8625 6000 ext. 6150', 'anabella.davila@itesm.mx', 'bellarosa', 'watercup'),
+(9, 20, 'Blanca G. Lopez Morales', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'blopez@itesm.mx', 'whitemoral', 'bottlecaps7'),
+(10, 23, 'Ismael Aguilar Barajas', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'iaguilar@itesm.mx', 'ismashuffle', 'slightofhand'),
+(11, 24, 'Javier Francisco Reynoso Javier', 'A3 301', '+52 (81) 8625 6000 ext. 6179', 'jreynoso@itesm.mx', 'franking4', 'puzzlepiece'),
+(12, 30, 'Jose Antonio Nunez Mora ', 'A3 301', '+52 (55) 5483 2240', 'janm@itesm.mx', 'joseantonio9', 'nunezmora'),
+(13, 22, 'Jose Heriberto Garcia Pena', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'jhgarcia@itesm.mx', 'herinandez10', 'divideby10'),
+(14, 20, 'Maria de la Cruz Castro Ricalde', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'maricruz.castro@itesm.mx', 'mariaxcastro', 'dotmouse'),
+(15, 20, 'Pol Popovic Karic', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'pol.popovic@itesm.mx', 'polpovic', 'blackmarker'),
+(16, 25, 'Raquel Minerva Castano Gonzalez', 'A3 301', '+52 (81) 8625 6000 ext. 6177', 'rcastano@itesm.mx', 'raquelcast', 'mousepadgreen'),
+(17, 30, 'Rene Cabral Torres', 'A3 301', '+52 (81) 8328 4170', 'rcabral@itesm.mx', 'renecabral', 'deadlytowers'),
+(18, 30, 'Roberto Joaquin Santillan Salgado', 'A3 301', '+52 (81) 8625 6000 ext. 6035', 'roberto.santillan@itesm.mx', 'ponchosal', 'carrotdiet'),
+(19, 31, 'Carlos Scheel Mayenberger', 'A3 301', '+52 (81) 8625 6174', 'cscheel@itesm.mx', 'charleysheel', 'cheermeup'),
+(20, 31, 'Consuelo Adelaida Garcia de la Torre', 'A3 301', '+52 (81) 8625 6000 ext. 6168', 'cogarcia@itesm.mx', 'consuelogarcia', 'kirbybeam'),
+(21, 23, 'Daniel Carrasco Brihuega', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'dcarrascob@itesm.mx', 'danycarrasgo', 'orangenote3'),
+(22, 19, 'David Jamile Sarquis Ramirez', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'david.sarquis@itesm.mx', 'davidjamile', 'blanco123'),
+(23, 19, 'Dejan Mihailovic Nikolajevic', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'dmihailo@itesm.mx', 'demihailovic', 'nikochanel'),
+(24, 25, 'Edgar Antonio Centeno Velazquez', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'ecenteno@itesm.mx', 'tonocent', 'candlelight12');
+
 
 CREATE TABLE proyecto (
   id int(10) UNSIGNED NOT NULL,

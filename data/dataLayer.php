@@ -96,4 +96,24 @@ function loadTeacherProfile($id){
     }
 }
 
+function loadGrupoInvestigacionOpcion(){
+    $conn = connectionToDataBase();
+    if($conn != null){
+        $sql = "SELECT id,nombre FROM grupo_investigacion";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0){
+            $response = array();
+            while($row = $result -> fetch_assoc()){
+                array_push($response, array("id"=> $row['id'], 'nombre' => $row['nombre']));
+            }
+            return $response;
+        } else {
+            die('There was an error loading the investigation areas');
+        }
+    }
+    else{
+        die('There was an error with the database connection');
+    }
+}
+
 ?>

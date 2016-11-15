@@ -19,6 +19,9 @@ switch ($action) {
     case "LOAD_PROFILE":
         loadProfile();
         break;
+    case "LOAD_GRUPO_OPCION":
+        loadGrupoOpcion();
+        break;
 }
 
 function loadTeachers(){
@@ -62,4 +65,15 @@ function loadProfile(){
     }
     
 }
+
+function loadGrupoOpcion(){
+    $result = loadGrupoInvestigacionOpcion();
+    if($result){
+        echo json_encode($result);
+    }
+    else{
+        die("There was an error loading the invetigation areas");
+    }
+}
+
 ?>

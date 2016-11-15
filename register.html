@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PyP</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/queries.css" rel="stylesheet">
+	<link href="css/mainStyle.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css"> </head>
+
+<body>
+    <div class = "container padding-top-10">
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">Registro</li>
+        </ul>
+        
+        <div class="panel panel-default">
+            <div class = "panel-heading">Registro de maestro nuevo</div>
+            <div class = "panel-body">
+                <form action="confirm.html" method="POST">
+                    
+                    <div class="row">
+                        <div class ="col-md-6">
+                            <label for="username" class="control-label">Nombre de Usuario:</label>
+                            <input type="text" class="form-control" id="username" placeholder="Usuario"/>
+                        </div>
+                    </div>
+                    
+                    <div class="row padding-top-10">
+                        <div class ="col-md-6">
+                            <label for="passwrd" class="control-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="passwrd" placeholder="Contraseña"/>
+                        </div>
+                        <div class ="col-md-6">
+                            <label for="passwrdcheck" class="control-label">Confirma Contraseña:</label>
+                            <input type="password" class="form-control padding-top-10" id="passwrdcheck" placeholder="Confirma Contraseña"/>
+                        </div>
+                    </div>
+                    
+                    <div class="row padding-top-10">
+                        <div class ="col-md-12">
+                            <label for="nombre" class="control-label">Nombre Completo:</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre"/>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-3 padding-top-10">
+                            <label for="oficina" class="control-label">Oficina:</label>
+                            <input type="text" class="form-control" id="oficina" placeholder="Oficina"/>
+                        </div>
+                        <div class="col-md-3 padding-top-10">
+                            <label for="telefono" class="control-label">Telefono:</label>
+                            <input type="text" class="form-control" id="telefono" placeholder="Telefono"/>
+                        </div>
+                        <div class="col-md-6 padding-top-10">
+                            <label for="correo" class="control-label">Correo:</label>
+                            <input type="text" class="form-control" id="correo" placeholder="Correo"/>
+                        </div>
+                    </div>
+                    
+                     <div class="row padding-top-10">
+                        <div class="col-md-6">
+                            <label for="grupoInvestigacion" class="control-label">Grupo de Investigacion:</label>
+                            <select class="form-control" id="grupoInvestigacion">
+                                <option>Seleccione su grupo de investigacion...</option>
+                            </select>
+                                
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row padding-top-10">
+                        <div class="col-md-2">
+                            <button type="sumbit" class="btn btn-success">Registrar</button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js "></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js "></script>
+	<script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+	<script src="js/load.js "></script>
+</body>
+
+</html>
