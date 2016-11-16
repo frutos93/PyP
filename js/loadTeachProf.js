@@ -15,15 +15,39 @@ $(document).ready(function () {
             , data: dataToSend
             , dataType: "json"
             , success: function (jsonResponse) {
-            $.each(jsonResponse, function (index) {
-                $('#nombreProf').append(jsonResponse[index].nombre);
-                $('#oficinaProf').append(jsonResponse[index].oficina);
-                $('#telProf').append(jsonResponse[index].telefono);
-                $('#correoProf').append(jsonResponse[index].correo);
-            });
+                $.each(jsonResponse, function (index) {
+                    $('#nombreProf').append(jsonResponse[index].nombre);
+                    $('#oficinaProf').append(jsonResponse[index].oficina);
+                    $('#telProf').append(jsonResponse[index].telefono);
+                    $('#correoProf').append(jsonResponse[index].correo);
+                });
             }
             , error: function (errorMsg) {
                 console.log(errorMsg);
+            }
+        });
+        
+        var dataToSend = {
+            "action": "LOAD_TEACH_PROJECT",
+            "id": idTeach
+        }
+        
+        $.ajax({
+            url: "data/applicationLayer.php"
+            , type: "POST"
+            , data: dataToSend
+            , dataType: "json"
+            , success: function (jsonResponse) {
+                var newHTMLContent = "";
+                $.each(jsonResponse, function (index) {
+                    newHTMLContent += "<tr><td><a class='proyInfo' data-id='" + jsonResponse[index].id + "'>" + jsonResponse[index].nombre + "</a></td><td>" + jsonResponse[index].cupo + "</td><td>"+ jsonResponse[index].descripcion+"<td></tr>";
+                });
+                $("#tableBody").append(newHTMLContent);
+                $('#projectTable').DataTable();
+            }
+            , error: function (errorMsg) {
+                $('#projectTable').hide();
+                $('h1').text(errorMsg.responseText);
             }
         });
     }

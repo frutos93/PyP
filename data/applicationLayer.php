@@ -22,6 +22,9 @@ switch ($action) {
     case "LOAD_GRUPO_OPCION":
         loadGrupoOpcion();
         break;
+    case "LOAD_TEACH_PROJECT":
+        loadTeachProjects();
+        break;
 }
 
 function loadTeachers(){
@@ -76,4 +79,14 @@ function loadGrupoOpcion(){
     }
 }
 
+function loadTeachProjects(){
+    $id = $_POST["id"];
+    $result = loadTeacherProjects($id);
+    if($result){
+        echo json_encode($result);
+    }
+    else{
+        die('There was an error loading the teacher projects.');
+    }
+}
 ?>

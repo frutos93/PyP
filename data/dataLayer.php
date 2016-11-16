@@ -116,4 +116,29 @@ function loadGrupoInvestigacionOpcion(){
     }
 }
 
+function loadTeacherProjects($id){
+    $conn = connectionToDataBase();
+    if($conn != null){
+        $sql = "SELECT id, nombre, estado, cupo_limite, descripcion FROM proyecto WHERE id_profesor = '$id'";
+        $result = $conn->query($sql);
+        if($result->num_rows > 0){
+            
+            $response = array();
+            while($row = $result -> fetch_assoc()){
+                array_push($response, array('id'=> $row['id'],'nombre' => $row['nombre'], 'estado' => $row['estado'], 'cupo' => $row['cupo_limite'], 'descripcion' => $row['descripcion']));
+            }
+            return $response;
+        } elseif($result->num_rows == 0){
+            
+            die('There are no projects to show');
+        } else{
+            
+            die('There was an error loading the projects');
+        }
+    }
+    else{
+        die('There was an error with the database connection');
+    }
+}
+
 ?>
