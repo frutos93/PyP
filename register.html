@@ -5,93 +5,100 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PyP</title>
+	<title>PyP Registro</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrapValidator.min.css" rel="stylesheet">
 	<link href="css/queries.css" rel="stylesheet">
 	<link href="css/mainStyle.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css"> </head>
 
 <body>
-    <div class = "container padding-top-10">
-        <ul class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li class="active">Registro</li>
+    
+    <div class="collapse navbar-collapse" id="navbar-container">
+        <ul class="nav navbar-nav">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+            <li class="active"><a href="#">Registro</a></li>
+            <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>Login</a></li>
         </ul>
-        
+    </div>
+    <div class = "container padding-top-10">
         <div class="panel panel-default">
             <div class = "panel-heading">Registro de maestro nuevo</div>
             <div class = "panel-body">
-                <form action="confirm.html" method="POST">
+                <form id="registration-form" action="#" method="POST">
                     
                     <div class="row">
                         <div class ="col-md-6">
-                            <label for="username" class="control-label">Nombre de Usuario:</label>
-                            <input type="text" class="form-control" id="username" placeholder="Usuario"/>
+                            <label for="registerUsername" class="control-label">Nombre de Usuario:</label>
+                            <input type="text" class="form-control" id="registerUsername" name="Username" placeholder="Usuario"/>
                         </div>
                     </div>
                     
                     <div class="row padding-top-10">
                         <div class ="col-md-6">
-                            <label for="passwrd" class="control-label">Contraseña:</label>
-                            <input type="password" class="form-control" id="passwrd" placeholder="Contraseña"/>
+                            <label for="registerPasswrd" class="control-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="registerPasswrd" name="Passwrd" placeholder="Contraseña"/>
                         </div>
                         <div class ="col-md-6">
-                            <label for="passwrdcheck" class="control-label">Confirma Contraseña:</label>
-                            <input type="password" class="form-control padding-top-10" id="passwrdcheck" placeholder="Confirma Contraseña"/>
+                            <label for="registerPasswrdcheck" class="control-label">Confirma Contraseña:</label>
+                            <input type="password" class="form-control padding-top-10" id="registerPasswrdcheck" name="Passwrdcheck" placeholder="Confirma Contraseña"/>
                         </div>
                     </div>
                     
                     <div class="row padding-top-10">
                         <div class ="col-md-12">
-                            <label for="nombre" class="control-label">Nombre Completo:</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre"/>
+                            <label for="registerNombre" class="control-label">Nombre Completo:</label>
+                            <input type="text" class="form-control" id="registerNombre" name="Nombre" placeholder="Nombre"/>
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="col-md-3 padding-top-10">
-                            <label for="oficina" class="control-label">Oficina:</label>
-                            <input type="text" class="form-control" id="oficina" placeholder="Oficina"/>
+                            <label for="registerOficina" class="control-label">Oficina:</label>
+                            <input type="text" class="form-control" id="registerOficina" name="Oficina" placeholder="Oficina"/>
                         </div>
                         <div class="col-md-3 padding-top-10">
-                            <label for="telefono" class="control-label">Telefono:</label>
-                            <input type="text" class="form-control" id="telefono" placeholder="Telefono"/>
+                            <label for="registerTelefono" class="control-label">Telefono:</label>
+                            <input type="text" class="form-control" id="registerTelefono" name="Telefono" placeholder="Telefono"/>
                         </div>
                         <div class="col-md-6 padding-top-10">
-                            <label for="correo" class="control-label">Correo:</label>
-                            <input type="text" class="form-control" id="correo" placeholder="Correo"/>
+                            <label for="registerCorreo" class="control-label">Correo:</label>
+                            <input type="text" class="form-control" id="registerCorreo" name="Correo" placeholder="Correo"/>
                         </div>
                     </div>
                     
                      <div class="row padding-top-10">
                         <div class="col-md-6">
-                            <label for="grupoInvestigacion" class="control-label">Grupo de Investigacion:</label>
-                            <select class="form-control" id="grupoInvestigacion">
-                                <option>Seleccione su grupo de investigacion...</option>
+                            <label for="registerGrupoInvestigacion" class="control-label">Grupo de Investigacion:</label>
+                            <select class="form-control" id="registerGrupoInvestigacion" name="GrupoInvestigacion">
+                                <option value="0">Seleccione su grupo de investigacion...</option>
                             </select>
-                                
                         </div>
-                        
                     </div>
                     
                     <div class="row padding-top-10">
                         <div class="col-md-2">
-                            <button type="sumbit" class="btn btn-success">Registrar</button>
+                            <button type="sumbit" id="registerBtn" class="btn btn-success">Registrar</button>
                         </div>
                     </div>
-                    
                 </form>
+                <div id="confirmation" class="alert alert-success hidden">
+                    <span class="glyphicon glyphicon-star"></span> Gracias por registrarse!
+                </div>
             </div>
         </div>
     </div>
-    
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js "></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js "></script>
 	<script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
-	<script src="js/load.js "></script>
+	
 </body>
-
+    
+<!-- BootstrapValidator (Bootstrap's plugin to validate forms) -->
+<script src="js/bootstrapValidator.min.js"></script>
+<script src="js/registerControl.js"></script>
+    
 </html>

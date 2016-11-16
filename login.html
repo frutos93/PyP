@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PyP Login</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrapValidator.min.css" rel="stylesheet">
+	<link href="css/queries.css" rel="stylesheet">
+	<link href="css/mainStyle.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css"> </head>
+
+<body>
+    <div class="collapse navbar-collapse" id="navbar-container">
+        <ul class="nav navbar-nav">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+            <li><a href="register.html">Registro</a></li>
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+        </ul>
+    </div>
+    
+    <div class = "container padding-top-10">
+        <div class="panel panel-default">
+            <div class = "panel-heading">Inicio de Session</div>
+            <div class = "panel-body">
+                <form id="login-form" action="#" method="POST">
+                    
+                    <div class="row">
+                        <div class ="col-md-6">
+                            <label for="loginUsername" class="control-label">Nombre de Usuario:</label>
+                            <input type="text" class="form-control" id="loginUsername" name="Username" placeholder="Usuario"/>
+                        </div>
+                    </div>
+                    
+                    <div class="row padding-top-10">
+                        <div class ="col-md-6">
+                            <label for="loginPasswrd" class="control-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="loginPasswrd" name="Passwrd" placeholder="Contraseña"/>
+                        </div>
+                    </div>
+                    
+                    <div class="row padding-top-10">
+                        <div class="col-md-2">
+                            <button type="sumbit" id="loginBtn" class="btn btn-success">Iniciar</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="confirmation" class="alert alert-success hidden">
+                    <span class="glyphicon glyphicon-star"></span> Bienvenido!
+                </div>
+            </div>
+        </div>
+    </div>
+    
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js "></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js "></script>
+	<script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+
+</body>
+    
+<!-- BootstrapValidator (Bootstrap's plugin to validate forms) -->
+<script src="js/bootstrapValidator.min.js"></script>
+<script src="js/loginControl.js "></script>
+    
+</html>
