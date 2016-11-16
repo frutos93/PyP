@@ -31,6 +31,12 @@ switch ($action) {
     case "LOGIN":
         loginFunction();
         break;
+    case "LOAD_TEACH_PROJECT":
+        loadTeachProjects();
+        break;
+    case "LOAD_PROY_INFO":
+        loadProjectInfo();
+        break;
 }
 
 function loadTeachers(){
@@ -86,7 +92,6 @@ function loadGrupoOpcion(){
 }
 
 
-
 function registrarMaestro(){
     $grupo = $_POST['grupo'];
     $username = $_POST['username'];
@@ -123,4 +128,24 @@ function loginFunction(){
 }
 
     
+function loadTeachProjects(){
+    $id = $_POST["id"];
+    $result = loadTeacherProjects($id);
+    if($result){
+        echo json_encode($result);
+    }
+    else{
+        die('There was an error loading the teacher projects.');
+    }
+}
+
+function loadProjectInfo(){
+    $id = $_POST["id"];
+    $result = loadProjectInformation($id);
+    if($result){
+        echo json_encode($result);
+    } else{
+        die('There was an error loading the project information.');
+    }
+}
 ?>
