@@ -141,4 +141,10 @@ function loadTeacherProjects($id){
     }
 }
 
+function loadProjectInformation($id){
+    $conn = connectionToDataBase();
+    if($conn != null){
+        $sql = "SELECT proy.nombre as nombreProy, prof.nombre as nombreProf, proy.estado, proy.cupo_limite, proy.descripcion FROM proyecto proy, profesor prof WHERE proy.id = '$id' AND proy.id_profesor = prof.id";
+    }
+}
 ?>

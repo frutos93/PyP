@@ -25,6 +25,9 @@ switch ($action) {
     case "LOAD_TEACH_PROJECT":
         loadTeachProjects();
         break;
+    case "LOAD_PROY_INFO":
+        loadProjectInfo();
+        break;
 }
 
 function loadTeachers(){
@@ -87,6 +90,16 @@ function loadTeachProjects(){
     }
     else{
         die('There was an error loading the teacher projects.');
+    }
+}
+
+function loadProjectInfo(){
+    $id = $_POST["id"];
+    $result = loadProjectInformation($id);
+    if($result){
+        echo json_encode($result);
+    } else{
+        die('There was an error loading the project information.');
     }
 }
 ?>

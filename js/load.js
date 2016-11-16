@@ -58,5 +58,10 @@ $(document).ready(function () {
             console.log(errorMsg);
         }
     });
+    
+    $('#tableBody').on('click','.teacherInfo',function(event){
+        localStorage.setItem('teachID',$(this).data('id'));
+        window.location.replace('teacherProfile.html');
+    });
 
 });

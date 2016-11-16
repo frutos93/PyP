@@ -26,12 +26,10 @@ $(document).ready(function () {
                 console.log(errorMsg);
             }
         });
-        
         var dataToSend = {
-            "action": "LOAD_TEACH_PROJECT",
-            "id": idTeach
+            "action": "LOAD_TEACH_PROJECT"
+            , "id": idTeach
         }
-        
         $.ajax({
             url: "data/applicationLayer.php"
             , type: "POST"
@@ -40,7 +38,7 @@ $(document).ready(function () {
             , success: function (jsonResponse) {
                 var newHTMLContent = "";
                 $.each(jsonResponse, function (index) {
-                    newHTMLContent += "<tr><td><a class='proyInfo' data-id='" + jsonResponse[index].id + "'>" + jsonResponse[index].nombre + "</a></td><td>" + jsonResponse[index].cupo + "</td><td>"+ jsonResponse[index].descripcion+"<td></tr>";
+                    newHTMLContent += "<tr><td><a class='proyInfo' data-id='" + jsonResponse[index].id + "'>" + jsonResponse[index].nombre + "</a></td><td>" + jsonResponse[index].cupo + "</td><td>" + jsonResponse[index].descripcion + "<td></tr>";
                 });
                 $("#tableBody").append(newHTMLContent);
                 $('#projectTable').DataTable();
@@ -49,6 +47,10 @@ $(document).ready(function () {
                 $('#projectTable').hide();
                 $('h1').text(errorMsg.responseText);
             }
+        });
+        $('#tableBody').on('click', '.proyInfo', function (event) {
+            localStorage.setItem('proyID', $(this).data('id'));
+            window.location.replace('projectInformation.html');
         });
     }
 });
