@@ -1,23 +1,5 @@
 $(document).ready(function(){
-    var dataToSend = {
-    "action": "LOAD_GRUPO_OPCION"
-    }
     
-    $.ajax({
-        url: "data/applicationLayer.php",
-        type: "POST",
-        data: dataToSend,
-        dataType: "json",
-        success: function (jsonResponse){
-            var newHTMLContent = '';
-            $.each(jsonResponse, function(index){
-                newHTMLContent += "<option value='" + jsonResponse[index].id + "'>" + jsonResponse[index].nombre + "</option>";
-            });
-            $('#registerGrupoInvestigacion').append(newHTMLContent);
-        }, error:function(errorMsg){
-            console.log(errorMsg);
-        }
-    });
     
     var validator = $("#registration-form").bootstrapValidator({
         feedbackIcons : {
@@ -112,7 +94,32 @@ $(document).ready(function(){
     
     validator.on("success.form.bv", function(e){
         e.preventDefault();
-        $("#registration-form").addClass("hidden");
-        $("#confirmation").removeClass("hidden");
+            var jsonObject = {
+                "action" : "REGISTRO",
+                "grupo" : $("#registerGrupoInvestigacion").val(),
+                "username" : $("#registerUsername").val(),
+                "passwrd" : $("#registerPasswrd").val(),
+                "nombre" : $("#registerNombre").val(),
+                "oficina" : $("#registerOficina").val(),
+                "telefono" : $("#registerTelefono").val(),
+                "email" : $("#registerCorreo").val()
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "data/applicationLayer.php",
+                data : jsonObject,
+                dataType : "json",
+                contentType : "application/x-www-form-urlencoded",
+                success: function(jsonData) {
+                    alert(jsonData.message);
+                    $("#registration-form").addClass("hidden");
+                    $("#confirmation").removeClass("hidden");
+                },
+                error: function(errorMsg){
+                    alert(errorMsg.responseText);
+                }
+            });
+
     });
 });

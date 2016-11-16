@@ -18,7 +18,8 @@
         <ul class="nav navbar-nav">
             <li><a href="index.html"><span class="glyphicon glyphicon-home"></span>Home</a></li>
             <li class="active"><a href="#">Registro</a></li>
-            <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+            <li id="loginTab"><a href="login.html"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+            <li id="logoutTab" class="hidden"><span class="glyphicon glyphicon-door"></span><a href="#">Logout</a></li>
         </ul>
     </div>
     <div class = "container padding-top-10">
@@ -31,6 +32,7 @@
                         <div class ="col-md-6">
                             <label for="registerUsername" class="control-label">Nombre de Usuario:</label>
                             <input type="text" class="form-control" id="registerUsername" name="Username" placeholder="Usuario"/>
+                            <div class="hidden" id="userID"></div>
                         </div>
                     </div>
                     
@@ -99,6 +101,7 @@
     
 <!-- BootstrapValidator (Bootstrap's plugin to validate forms) -->
 <script src="js/bootstrapValidator.min.js"></script>
+<script src="js/registerLoad.js"></script>
 <script src="js/registerControl.js"></script>
     
 </html>

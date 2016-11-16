@@ -22,6 +22,15 @@ switch ($action) {
     case "LOAD_GRUPO_OPCION":
         loadGrupoOpcion();
         break;
+    case "GET_ID":
+        getID();
+        break;
+    case "REGISTRO":
+        registrarMaestro();
+        break;
+    case "LOGIN":
+        loginFunction();
+        break;
 }
 
 function loadTeachers(){
@@ -76,4 +85,42 @@ function loadGrupoOpcion(){
     }
 }
 
+
+
+function registrarMaestro(){
+    $grupo = $_POST['grupo'];
+    $username = $_POST['username'];
+    $passwrd = $_POST['passwrd'];
+    $nombre = $_POST['nombre'];
+    $oficina = $_POST['oficina'];
+    $telefono= $_POST['telefono'];
+    $email = $_POST['email'];
+    
+    $result = loadRegistrarMaestro($grupo, $username, $passwrd, $nombre, $oficina, $telefono, $email);
+    
+    if ($result["status"] == "SUCCESS"){
+		echo json_encode(array("message" => "Se creo nuevo maestro"));
+	}	
+	else{
+		header('HTTP/1.1 500' . $result["status"]);
+		die($result["status"]);
+	}	
+}
+
+function loginFunction(){
+	$username = $_POST["username"];
+	$passwrd = $_POST["passwrd"];
+    
+	$result = attemptLogin($username, $passwrd);
+
+	if ($result["status"] == "SUCCESS"){
+		echo json_encode(array("message" => "Login Successful", "nombre"=>$result["nombre"], "email"=>$result["email"]));
+	}	
+	else{
+		header('HTTP/1.1 500' . $result["status"]);
+		die($result["status"]);
+	}	
+}
+
+    
 ?>
