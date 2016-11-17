@@ -294,8 +294,7 @@ function attemptChecaSesion(){
 	}
 	else
 	{
-		header('HTTP/1.1 406 Session has expired, you will be redirected to the login');
-		die("Session has expired! You will be redirected to the login.");
+		return array("status"=> "FAIL");
 	}
 }
 

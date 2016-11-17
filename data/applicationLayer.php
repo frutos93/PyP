@@ -240,8 +240,11 @@ function loadProjectInfo(){
 function loadChecaSesion(){
     $result = attemptChecaSesion();
     if ($result["status"] == "SUCCESS"){
-		echo json_encode(array("message" => "Sesion exitosa", "username" => $result["username"], "id" => $result["id"],));
-	}	
+		echo json_encode(array("message" => "Sesion exitosa", "username" => $result["username"], "id" => $result["id"]));
+	}
+    else if($result["status"] == "FAIL"){
+        echo json_encode(array("message"=>"FAIL"));
+    }
     else{
         die("There was an error checking for a session");
     }

@@ -2,18 +2,17 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PyP Registro</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PyP Registro</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrapValidator.min.css" rel="stylesheet">
-	<link href="css/queries.css" rel="stylesheet">
-	<link href="css/mainStyle.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css"> </head>
+    <link href="css/queries.css" rel="stylesheet">
+    <link href="css/mainStyle.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css"> </head>
 
 <body>
-    
     <div class="collapse navbar-collapse" id="navbar-container">
         <ul class="nav navbar-nav">
             <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
@@ -23,43 +22,37 @@
             <li id="logoutTab" class="hidden"><a href="#">Logout <span class="glyphicon glyphicon-log-out"></span></a></li>
         </ul>
     </div>
-    <div class = "container padding-top-10">
+    <div class="container padding-top-10">
         <div class="panel panel-default">
-            <div class = "panel-heading">Registro de nuevo Proyecto</div>
-            <div class = "panel-body">
+            <div class="panel-heading">Registro de nuevo Proyecto</div>
+            <div class="panel-body">
                 <form id="registration-form" action="#" method="POST">
-                    
                     <div class="row">
-                        <div class ="col-md-6">
+                        <div class="col-md-6">
                             <label for="proyName" class="control-label">Nombre de Proyecto:</label>
-                            <input type="text" class="form-control" id="proyNombre" name="Nombre" placeholder="Nombre del proyecto"/>
-                        </div>
+                            <input type="text" class="form-control" id="proyNombre" name="Nombre" placeholder="Nombre del proyecto" /> </div>
                     </div>
-                    
                     <div class="row padding-top-10">
-                        <div class ="col-md-6">
+                        <div class="col-md-6">
                             <label for="proyNumber" class="control-label">Cupo Limite:</label>
-                            <input type="number" min='1' max = '99' class="form-control" id="proyCupo" name="CupoLimite" placeholder="Cupo Limite"/>
-                        </div>
+                            <input type="number" min='1' max='99' class="form-control" id="proyCupo" name="CupoLimite" placeholder="Cupo Limite" /> </div>
                     </div>
                     <div class="row padding-top-10">
-                        <div class ="col-md-6">
+                        <div class="col-md-6">
                             <label for="proyNumber" class="control-label">Estado:</label>
                             <select id='proyEstado'>
-                            <option value='abierto'>Abierto</option>
-                            <option value='cerrado'>Cerrado</option>
-                            <option value='terminado'>Terminado</option>
+                                <option value='abierto'>Abierto</option>
+                                <option value='cerrado'>Cerrado</option>
+                                <option value='terminado'>Terminado</option>
                             </select>
                         </div>
                     </div>
-                    
                     <div class="row">
                         <div class="col-md-6 padding-top-10">
                             <label for="registerOficina" class="control-label">Descripcion:</label>
                             <textarea type="text" class="form-control" id="proyDescripcion" name="Descripcion" placeholder="Descripcion"></textarea>
                         </div>
                     </div>
-                    
                     <div class="row padding-top-10">
                         <div class="col-md-2">
                             <button type="sumbit" id="registerBtn" class="btn btn-success">Guardar</button>
@@ -69,25 +62,22 @@
                         </div>
                     </div>
                 </form>
-                <div id="confirmation" class="alert alert-success hidden">
-                    <span class="glyphicon glyphicon-star"></span> Proyecto Actualizado!
-                </div>
+                <div id="confirmation" class="alert alert-success hidden"> <span class="glyphicon glyphicon-star"></span> Proyecto Actualizado! </div>
             </div>
         </div>
     </div>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js "></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js "></script>
-	<script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
-	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js "></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js "></script>
+    <script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 </body>
-    
 <!-- BootstrapValidator (Bootstrap's plugin to validate forms) -->
 <script src="js/bootstrapValidator.min.js"></script>
+<script src="js/sessionIsSet.js"></script>
 <script src="js/loadEditPoy.js"></script>
 <script src="js/registerControlProyEdit.js"></script>
 <script src="js/checkSession.js"></script>
-    
+
 </html>

@@ -15,6 +15,7 @@ $(document).ready(function(){
             $("#registerTab").hide();
             $("#logoutTab").removeClass("hidden");
             $("#userWelcome").removeClass("hidden");
+            
 
         }, error:function(errorMsg){
             console.log(errorMsg);
@@ -35,6 +36,7 @@ $(document).ready(function(){
             data: dataToSend,
             dataType: "json",
             success: function (jsonResponse){
+                window.location.replace('index.html');
                 $("#logoutTab").addClass("hidden");
                 $("#loginTab").removeClass("hidden");
                 $("#userWelcome").addClass("hidden");
@@ -43,6 +45,7 @@ $(document).ready(function(){
 
             }, error:function(errorMsg){
                 console.log(errorMsg);
+                window.location.replace('index.html');
                 $("#registerTab").show();
                 $("#loginTab").addClass("hidden");
                 $("#logoutTab").removeClass("hidden");
