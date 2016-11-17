@@ -12,6 +12,7 @@ $(document).ready(function(){
             $("#userWelcomeText").append("Bienvenido " + jsonResponse.username + "!");
             $("#userWelcomeID").append(jsonResponse.id);
             $("#loginTab").addClass("hidden");
+            $("#registerTab").hide();
             $("#logoutTab").removeClass("hidden");
             $("#userWelcome").removeClass("hidden");
 
@@ -37,11 +38,15 @@ $(document).ready(function(){
                 $("#logoutTab").addClass("hidden");
                 $("#loginTab").removeClass("hidden");
                 $("#userWelcome").addClass("hidden");
+                $("#userWelcomeID").text('');
+                $("#registerTab").show();
 
             }, error:function(errorMsg){
                 console.log(errorMsg);
+                $("#registerTab").show();
                 $("#loginTab").addClass("hidden");
                 $("#logoutTab").removeClass("hidden");
+                $("#userWelcomeID").text('');
                 $("#userWelcome").removeClass("hidden");
             }
         });

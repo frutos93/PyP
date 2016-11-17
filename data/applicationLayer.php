@@ -44,6 +44,9 @@ switch ($action) {
     case "TERMINA-SESION":
         loadTerminaSesion();
         break;
+    case "REGISTRO_PROY":
+        registrarProyecto();
+        break;
 }
 
 function loadTeachers(){
@@ -107,7 +110,6 @@ function registrarMaestro(){
     $oficina = $_POST['oficina'];
     $telefono= $_POST['telefono'];
     $email = $_POST['email'];
-    
     $result = loadRegistrarMaestro($grupo, $username, $passwrd, $nombre, $oficina, $telefono, $email);
     
     if ($result["status"] == "SUCCESS"){
@@ -117,6 +119,24 @@ function registrarMaestro(){
 		header('HTTP/1.1 500' . $result["status"]);
 		die($result["status"]);
 	}	
+}
+
+function registrarProyecto(){
+    $nombre= $_POST['nombre'];
+    $cupo = $_POST['cupo'];
+    $descripcion = $_POST['descripcion'];
+    $id =  $_POST['id'];
+    
+    $result = attemptRegisterProyect($id, $nombre, $cupo, $descripcion);
+    
+    if ($result['status'] == "SUCCESS"){
+        echo json_encode(array("message"=>"Se creo un nuevo evento"));
+        
+    }else{
+		header('HTTP/1.1 500' . $result["status"]);
+		die($result["status"]);
+	}
+    
 }
 
 function loginFunction(){

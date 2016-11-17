@@ -49,7 +49,7 @@ $(document).ready(function () {
         , success: function (jsonResponse) {
             var newHTMLContent = "";
             $.each(jsonResponse, function (index) {
-                newHTMLContent += "<tr><td><a class='teacherInfo' data-id='" + jsonResponse[index].id + "'>" + jsonResponse[index].nombre + "</a></td><td>" + jsonResponse[index].correo + "</td></tr>";
+                newHTMLContent += "<tr><td><a class='teacherInfo' href='teacherProfile.html' data-id='" + jsonResponse[index].id + "'>" + jsonResponse[index].nombre + "</a></td><td>" + jsonResponse[index].correo + "</td></tr>";
             });
             $("#tableBody").append(newHTMLContent);
             $('#teacherTable').DataTable();
@@ -61,7 +61,6 @@ $(document).ready(function () {
     
     $('#tableBody').on('click','.teacherInfo',function(event){
         localStorage.setItem('teachID',$(this).data('id'));
-        window.location.replace('teacherProfile.html');
     });
 
 });

@@ -16,16 +16,16 @@ $(document).ready(function () {
             , dataType: "json"
             , success: function (jsonResponse) {
             $.each(jsonResponse, function (index) {
-                $('#nombreProf').append(jsonResponse[index].nombre);
-                $('#oficinaProf').append(jsonResponse[index].oficina);
-                $('#telProf').append(jsonResponse[index].telefono);
-                $('#correoProf').append(jsonResponse[index].correo);
+                $('#nombreProy').append(jsonResponse[index].nombre);
+                $('#profProy').append(jsonResponse[index].profesor);
+                $('#estadoProy').append(jsonResponse[index].estado);
+                $('#cupoProy').append(jsonResponse[index].cupo);
+                $('#descripcionProy').append(jsonResponse[index].descripcion);
             });
             }
             , error: function (errorMsg) {
                 console.log(errorMsg);
             }
         });
-    });
     }
 });

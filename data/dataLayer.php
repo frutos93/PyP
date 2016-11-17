@@ -4,9 +4,9 @@ function connectionToDataBase()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "root";
     $dbname = "pypdb";
-    $conn = new \mysqli($servername, $username, $password, $dbname);
+    $conn = new \mysqli($servername, $username, $password, $dbname, 8889);
     if ($conn->connect_error) {
         return null;
     } else {
@@ -151,6 +151,39 @@ function loadRegistrarMaestro($grupo, $username, $passwrd, $nombre, $oficina, $t
         return array("status" => "Mala conexion a la BD");
     }
 }
+function attemptRegisterProyect($id, $nombre, $cupo, $descripcion){
+    $conn = connectionToDataBase();
+    if ($conn != null){
+
+        $sql = "SELECT nombre FROM proyecto WHERE nombre = '$nombre'";
+
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0)
+        {
+            $conn -> close();
+            return array("status" => "Proyecto con ese nombre ya existe");
+        }
+        else{
+
+            $sql = "INSERT INTO proyecto (nombre, id_profesor, estado, cupo_limite, descripcion) VALUES ('$nombre','$id', 'abierto', '$cupo', '$descripcion')";
+            
+            if (mysqli_query($conn, $sql)) 
+            {
+                $conn -> close();
+                return array("status" => "SUCCESS");
+            } 
+            else 
+            {
+                $conn -> close();
+                return array("status" => "No se pudo hacer la query");
+            }
+        }
+    }else{
+        $conn -> close();
+        return array("status" => "Mala conexion a la BD");
+    }
+}
 
 function attemptLogin($username, $passwrd){
     $conn = connectionToDataBase();
@@ -248,8 +281,6 @@ function attemptTerminaSesion(){
 }
 
 
-
-/*
 function loadProjectInformation($id){
     $conn = connectionToDataBase();
     if($conn != null){
@@ -258,10 +289,17 @@ function loadProjectInformation($id){
         if($result->num_rows > 0){
             $response = array();
             while($row = $result -> fetch_assoc()){
-                array_push($response, array('nombreProy' => $row['nombreProy'], 'nombreProf' => $row['nombreProf']))
+                array_push($response, array('nombre' => $row['nombreProy'], 'profesor' => $row['nombreProf'], 'estado' => $row['estado'], 'cupo' => $row['cupo_limite'], 'descripcion' => $row['descripcion']));
             }
+            return $response;
+        } else{
+            
+            die('There was an error loading the project information');
         }
     }
+    else{
+        die('There was an error with the database connection');
+    }
 }
-*/
+
 ?>

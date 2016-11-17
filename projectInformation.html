@@ -14,36 +14,43 @@
 <body>
     <div class="collapse navbar-collapse" id="navbar-container">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-            <li><a href="register.html">Registro</a></li>
-            <li id="loginTab"><a href="login.html"><span class="glyphicon glyphicon-user"></span>Login</a></li>
-            <li id="logoutTab" class="hidden"><span class="glyphicon glyphicon-door"></span><a href="#">Logout</a></li>
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li id="registerTab"><a href="register.html"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
+            <li id="loginTab"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li id="userWelcome" class="hidden"><a href="#"><span id="userWelcomeText"></span><span id="userWelcomeID" class="hidden"></span></a></li>
+            <li id="logoutTab" class="hidden"><a href="#">Logout <span class="glyphicon glyphicon-log-out"></span></a></li>
         </ul>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-xs-12" align=center>
                 <div class="row">
-                    <div class="col-xs-6" id='nombreProy'><h2>Nombre: </h2></div>
-                    <div class="col-xs-6" id='profProy'><h2>Profesor: </h2></div>
+                    <div class="col-xs-6" id='nombreProy'>
+                        <h2>Nombre: </h2></div>
+                    <div class="col-xs-6" id='profProy'>
+                        <h2>Profesor: </h2></div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-6" id='estadoProy'><h2>Estado: </h2></div>
-                    <div class="col-xs-6" id='cupoProy'><h2>Cupo Limite: </h2></div>
+                    <div class="col-xs-6" id='estadoProy'>
+                        <h2>Estado: </h2></div>
+                    <div class="col-xs-6" id='cupoProy'>
+                        <h2>Cupo Limite: </h2></div>
                 </div>
                 <div class='row'>
-                    <div class='col-xs-12' id='descripcionProy'><h2>Descripcion: </h2></div>
+                    <div class='col-xs-12' id='descripcionProy'>
+                        <h2>Descripcion: </h2></div>
                 </div>
             </div>
         </div>
     </div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js "></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js "></script>
-        <script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="js/loadProyInfo.js"></script>       
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js "></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js "></script>
+    <script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="js/loadProyInfo.js"></script>
+    <script src="js/checkSession.js"></script>
 </body>
 
 </html>
