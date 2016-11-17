@@ -34,7 +34,6 @@ $(document).ready(function(){
             dataType: "json",
             contentType: "application/x-www-form-urlencoded",
             success: function(jsonResponse){
-                alert(jsonData.message);
                 $("#login-form").addClass("hidden");
                 $("#confirmation").removeClass("hidden");
 

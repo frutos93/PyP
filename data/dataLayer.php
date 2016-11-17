@@ -4,9 +4,9 @@ function connectionToDataBase()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "root";
     $dbname = "pypdb";
-    $conn = new \mysqli($servername, $username, $password, $dbname);
+    $conn = new \mysqli($servername, $username, $password, $dbname, 8889);
     if ($conn->connect_error) {
         return null;
     } else {
@@ -134,8 +134,7 @@ function loadRegistrarMaestro($grupo, $username, $passwrd, $nombre, $oficina, $t
         else{
 
             $sql = "INSERT INTO profesor (id_grupo_investigacion, nombre, oficina, telefono, correo, username, passwrd) VALUES ('$grupo','$nombre', '$oficina', '$telefono', '$email', '$username', '$passwrd')";
-
-
+            
             if (mysqli_query($conn, $sql)) 
             {
                 $conn -> close();
@@ -219,10 +218,20 @@ function loadTeacherProjects($id){
     }
 }
 
+
+/*
 function loadProjectInformation($id){
     $conn = connectionToDataBase();
     if($conn != null){
         $sql = "SELECT proy.nombre as nombreProy, prof.nombre as nombreProf, proy.estado, proy.cupo_limite, proy.descripcion FROM proyecto proy, profesor prof WHERE proy.id = '$id' AND proy.id_profesor = prof.id";
+        $result = $conn->query($sql);
+        if($result->num_rows > 0){
+            $response = array();
+            while($row = $result -> fetch_assoc()){
+                array_push($response, array('nombreProy' => $row['nombreProy'], 'nombreProf' => $row['nombreProf']))
+            }
+        }
     }
 }
+*/
 ?>

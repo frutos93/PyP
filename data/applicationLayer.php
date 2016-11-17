@@ -1,10 +1,11 @@
 <?php
 
 header('Content-type: application/json');
-header('Content-Type: text/html;charset=utf-8');
-require_once 'dataLayer.php';
-
+ header('Content-Type: text/html;charset=utf-8');
+ require_once 'dataLayer.php';
 $action = $_POST["action"];
+
+
 
 switch ($action) {
     case "LOAD_TEACH":
