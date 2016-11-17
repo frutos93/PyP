@@ -44,6 +44,9 @@ switch ($action) {
     case "CHECA-SESION":
         loadChecaSesion();
         break;
+    case "CHECA-SESION2":
+        loadChecaSesion();
+        break;
     case "TERMINA-SESION":
         loadTerminaSesion();
         break;
@@ -250,6 +253,14 @@ function loadProjectInfo(){
 }
 
 function loadChecaSesion(){
+    $result = attemptChecaSesion();
+    if ($result["status"] == "SUCCESS"){
+		echo json_encode(array("message" => "Sesion exitosa", "username" => $result["username"], "id" => $result["id"]));
+	}
+    else{
+        die("There was an error checking for a session");
+    }
+}function loadChecaSesion2(){
     $result = attemptChecaSesion();
     if ($result["status"] == "SUCCESS"){
 		echo json_encode(array("message" => "Sesion exitosa", "username" => $result["username"], "id" => $result["id"]));

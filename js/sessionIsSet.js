@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var dataToSend = {
-    "action": "CHECA-SESION"
+    "action": "CHECA-SESION2"
     }
    
     $.ajax({

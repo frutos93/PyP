@@ -64,7 +64,7 @@ $(document).ready(function () {
         , success: function (jsonResponse) {
             var newHTMLContent = "";
             $.each(jsonResponse, function (index) {
-                newHTMLContent += "<tr><td><a href='projectInformation.html' class='proyInfo' data-id='" + jsonResponse[index].id + "'>" + jsonResponse[index].nombre + "</a></td><td>" + jsonResponse[index].estado + "</td><td>" + jsonResponse[index].cupo + "</td><td>" + jsonResponse[index].descripcion + "</td></tr>";
+                newHTMLContent += "<tr><td><a href='projectInformation.html' class='proyInfo' data-id='" + jsonResponse[index].id + "'>" + jsonResponse[index].nombre + "</a></td><td>"+ jsonResponse[index].descripcion + "</td></tr>";
             });
             $("#projectBody").append(newHTMLContent);
             $('#projectTable').DataTable();
