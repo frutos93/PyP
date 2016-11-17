@@ -53,6 +53,9 @@ switch ($action) {
     case "UPDATE_PERFIL":
         updatePerfil();
         break;
+    case "UPDATE_PROY":
+        updateProyecto();
+        break;
 }
 
 function updatePerfil(){
@@ -73,6 +76,28 @@ function updatePerfil(){
 	}	
      
 }
+
+function updateProyecto(){
+    session_start();
+    $id = $_SESSION['id'];
+    $idProy = $_POST['id'];
+    $nombre = $_POST['nombre'];
+    $cupo = $_POST['cupo'];
+    $estado = $_POST['estado'];
+    $descripcion = $_POST['descripcion'];
+    
+    $result = updateProjectInformation($id, $idProy, $nombre, $cupo, $estado, $descripcion);
+    
+    if ($result["status"] == "SUCCESS"){
+		echo json_encode(array("message" => "Se actualizaron los datos correctamente!"));
+	}	
+	else{
+		header('HTTP/1.1 500' . $result["status"]);
+		die($result["status"]);
+	}	
+     
+}
+
 function loadTeachers(){
     $result = loadTeacherInformation();
     if($result){

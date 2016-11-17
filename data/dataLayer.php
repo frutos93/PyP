@@ -4,9 +4,9 @@ function connectionToDataBase()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "root";
     $dbname = "pypdb";
-    $conn = new \mysqli($servername, $username, $password, $dbname);
+    $conn = new \mysqli($servername, $username, $password, $dbname, 8889);
     if ($conn->connect_error) {
         return null;
     } else {
@@ -241,6 +241,22 @@ function updateTeacherProfile($id, $nombre, $oficina, $telefono,$correo){
     }
 }
 
+function updateProjectInformation($id, $idProy, $nombre, $cupo, $estado, $descripcion){
+    $conn = connectionToDataBase();
+    if($conn != null){
+        $sql = "UPDATE proyecto SET nombre = '$nombre', estado = '$estado', cupo_limite = '$cupo', descripcion = '$descripcion' WHERE id_profesor = '$id' AND id = '$idProy'";
+        $result = $conn->query($sql);
+        if($result){
+            return array("status" => "SUCCESS");
+        }
+        else{
+            return array("status" => "Error al actualizar los datos");
+        }
+    }
+    else {
+        return array("status" => "Mala conexion a la BD.");
+    }
+}
 
 
 function loadTeacherProjects($id){
