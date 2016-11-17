@@ -2,74 +2,62 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PyP Registro</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PyP Registro</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrapValidator.min.css" rel="stylesheet">
-	<link href="css/queries.css" rel="stylesheet">
-	<link href="css/mainStyle.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css"> </head>
+    <link href="css/queries.css" rel="stylesheet">
+    <link href="css/mainStyle.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css"> </head>
 
 <body>
-    
     <div class="collapse navbar-collapse" id="navbar-container">
         <ul class="nav navbar-nav">
             <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-            <li class="active "id="registerTab"><a href="register.html"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
+            <li class="active " id="registerTab"><a href="register.html"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
+            <li id="registerProject"><a href="agregarProyecto.html"><span class="glyphicon glyphicon-user"></span> New Project</a></li>
             <li id="loginTab"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             <li id="userWelcome" class="hidden"><a href="perfil.html"><span id="userWelcomeText"></span><span id="userWelcomeID" class="hidden"></span></a></li>
             <li id="logoutTab" class="hidden"><a href="#">Logout <span class="glyphicon glyphicon-log-out"></span></a></li>
         </ul>
     </div>
-    <div class = "container padding-top-10">
+    <div class="container padding-top-10">
         <div class="panel panel-default">
-            <div class = "panel-heading">Registro de maestro nuevo</div>
-            <div class = "panel-body">
+            <div class="panel-heading">Registro de maestro nuevo</div>
+            <div class="panel-body">
                 <form id="registration-form" action="#" method="POST">
-                    
                     <div class="row">
-                        <div class ="col-md-6">
+                        <div class="col-md-6">
                             <label for="registerUsername" class="control-label">Nombre de Usuario:</label>
-                            <input type="text" class="form-control" id="registerUsername" name="Username" placeholder="Usuario"/>
-                        </div>
+                            <input type="text" class="form-control" id="registerUsername" name="Username" placeholder="Usuario" /> </div>
                     </div>
-                    
                     <div class="row padding-top-10">
-                        <div class ="col-md-6">
+                        <div class="col-md-6">
                             <label for="registerPasswrd" class="control-label">Contraseña:</label>
-                            <input type="password" class="form-control" id="registerPasswrd" name="Passwrd" placeholder="Contraseña"/>
-                        </div>
-                        <div class ="col-md-6">
+                            <input type="password" class="form-control" id="registerPasswrd" name="Passwrd" placeholder="Contraseña" /> </div>
+                        <div class="col-md-6">
                             <label for="registerPasswrdcheck" class="control-label">Confirma Contraseña:</label>
-                            <input type="password" class="form-control padding-top-10" id="registerPasswrdcheck" name="Passwrdcheck" placeholder="Confirma Contraseña"/>
-                        </div>
+                            <input type="password" class="form-control padding-top-10" id="registerPasswrdcheck" name="Passwrdcheck" placeholder="Confirma Contraseña" /> </div>
                     </div>
-                    
                     <div class="row padding-top-10">
-                        <div class ="col-md-12">
+                        <div class="col-md-12">
                             <label for="registerNombre" class="control-label">Nombre Completo:</label>
-                            <input type="text" class="form-control" id="registerNombre" name="Nombre" placeholder="Nombre"/>
-                        </div>
+                            <input type="text" class="form-control" id="registerNombre" name="Nombre" placeholder="Nombre" /> </div>
                     </div>
-                    
                     <div class="row">
                         <div class="col-md-3 padding-top-10">
                             <label for="registerOficina" class="control-label">Oficina:</label>
-                            <input type="text" class="form-control" id="registerOficina" name="Oficina" placeholder="Oficina"/>
-                        </div>
+                            <input type="text" class="form-control" id="registerOficina" name="Oficina" placeholder="Oficina" /> </div>
                         <div class="col-md-3 padding-top-10">
                             <label for="registerTelefono" class="control-label">Telefono:</label>
-                            <input type="text" class="form-control" id="registerTelefono" name="Telefono" placeholder="Telefono"/>
-                        </div>
+                            <input type="text" class="form-control" id="registerTelefono" name="Telefono" placeholder="Telefono" /> </div>
                         <div class="col-md-6 padding-top-10">
                             <label for="registerCorreo" class="control-label">Correo:</label>
-                            <input type="text" class="form-control" id="registerCorreo" name="Correo" placeholder="Correo"/>
-                        </div>
+                            <input type="text" class="form-control" id="registerCorreo" name="Correo" placeholder="Correo" /> </div>
                     </div>
-                    
-                     <div class="row padding-top-10">
+                    <div class="row padding-top-10">
                         <div class="col-md-6">
                             <label for="registerGrupoInvestigacion" class="control-label">Grupo de Investigacion:</label>
                             <select class="form-control" id="registerGrupoInvestigacion" name="GrupoInvestigacion">
@@ -77,32 +65,27 @@
                             </select>
                         </div>
                     </div>
-                    
                     <div class="row padding-top-10">
                         <div class="col-md-2">
                             <button type="sumbit" id="registerBtn" class="btn btn-success">Registrar</button>
                         </div>
                     </div>
                 </form>
-                <div id="confirmation" class="alert alert-success hidden">
-                    <span class="glyphicon glyphicon-star"></span> Gracias por registrarse!
-                </div>
+                <div id="confirmation" class="alert alert-success hidden"> <span class="glyphicon glyphicon-star"></span> Gracias por registrarse! </div>
             </div>
         </div>
     </div>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js "></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js "></script>
-	<script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
-	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js "></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js "></script>
+    <script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 </body>
-    
 <!-- BootstrapValidator (Bootstrap's plugin to validate forms) -->
 <script src="js/bootstrapValidator.min.js"></script>
 <script src="js/registerLoad.js"></script>
 <script src="js/registerControl.js"></script>
 <script src="js/checkSession.js"></script>
-    
+
 </html>

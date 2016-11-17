@@ -12,6 +12,7 @@ $(document).ready(function(){
             $("#userWelcomeText").append("Bienvenido " + jsonResponse.username + "!");
             $("#userWelcomeID").append(jsonResponse.id);
             $("#loginTab").addClass("hidden");
+            $('#registerProject').show();
             $("#registerTab").hide();
             $("#logoutTab").removeClass("hidden");
             $("#userWelcome").removeClass("hidden");
@@ -22,6 +23,8 @@ $(document).ready(function(){
             $("#logoutTab").addClass("hidden");
             $("#userWelcome").addClass("hidden");
             $("#loginTab").removeClass("hidden");
+                        $('#registerProject').hide();
+
         }
     });
     
@@ -42,6 +45,8 @@ $(document).ready(function(){
                 $("#userWelcome").addClass("hidden");
                 $("#userWelcomeID").text('');
                 $("#registerTab").show();
+                            $('#registerProject').hide();
+
 
             }, error:function(errorMsg){
                 console.log(errorMsg);
