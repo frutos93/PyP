@@ -43,11 +43,11 @@ $(document).ready(function () {
     validator.on("success.form.bv", function (e) {
         e.preventDefault();
         var jsonObject = {
-            "action": "REGISTRO_PROY"
-            , "id": $("#userWelcomeID").text()
-            , "nombre": $("#proyNombre").val()
-            , "cupo": $("#proyCupo").val()
-            , "descripcion": $("#proyDescripcion").val()
+            "action": "UPDATE_PERFIL"
+            , "nombre": $("#profNombre").val()
+            , "oficina": $("#profOficina").val()
+            , "telefono": $("#profTel").val(),
+            "correo": $('#profCorreo').val()
         , };
         $.ajax({
             type: "POST"
@@ -56,8 +56,6 @@ $(document).ready(function () {
             , dataType: "json"
             , success: function (jsonData) {
                 alert(jsonData.message);
-                $("#registration-form").addClass("hidden");
-                $("#confirmation").removeClass("hidden");
             }
             , error: function (errorMsg) {
                 console.log(errorMsg);

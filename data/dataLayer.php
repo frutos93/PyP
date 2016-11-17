@@ -224,6 +224,23 @@ function attemptLogin($username, $passwrd){
     }
 }
 
+function updateTeacherProfile($id, $nombre, $oficina, $telefono,$correo){
+    $conn = connectionToDataBase();
+    if($conn != null){
+        $sql = "UPDATE profesor SET nombre = '$nombre', oficina = '$oficina', telefono = '$telefono', correo = '$correo' WHERE id = '$id'";
+        $result = $conn->query($sql);
+        if($result){
+            return array("status" => "SUCCESS");
+        }
+        else{
+            return array("status" => "Error al actualizar los datos");
+        }
+    }
+    else {
+        return array("status" => "Mala conexion a la BD.");
+    }
+}
+
 
 
 function loadTeacherProjects($id){

@@ -1,7 +1,6 @@
 $(document).ready(function () {
     var dataToSend = {
-        "id": $("#userWelcomeID").text()
-        , "action": "LOAD_PROFILE"
+        "action": "LOAD_PROFILE_SESSION"  
     }
     $.ajax({
         url: "data/applicationLayer.php"

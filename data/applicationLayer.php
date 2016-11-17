@@ -20,6 +20,9 @@ switch ($action) {
     case "LOAD_PROFILE":
         loadProfile();
         break;
+    case "LOAD_PROFILE_SESSION":
+        loadProfileSess();
+        break;
     case "LOAD_GRUPO_OPCION":
         loadGrupoOpcion();
         break;
@@ -47,8 +50,29 @@ switch ($action) {
     case "REGISTRO_PROY":
         registrarProyecto();
         break;
+    case "UPDATE_PERFIL":
+        updatePerfil();
+        break;
 }
 
+function updatePerfil(){
+    session_start();
+    $id = $_SESSION['id'];
+    $nombre = $_POST['nombre'];
+    $oficina = $_POST['oficina'];
+    $telefono = $_POST['telefono'];
+    $correo = $_POST['correo'];
+    $result = updateTeacherProfile($id, $nombre, $oficina, $telefono,$correo);
+    
+    if ($result["status"] == "SUCCESS"){
+		echo json_encode(array("message" => "Se actualizaron los datos correctamente!"));
+	}	
+	else{
+		header('HTTP/1.1 500' . $result["status"]);
+		die($result["status"]);
+	}	
+     
+}
 function loadTeachers(){
     $result = loadTeacherInformation();
     if($result){
@@ -81,6 +105,18 @@ function loadArea(){
 
 function loadProfile(){
     $id = $_POST["id"];
+    $result = loadTeacherProfile($id);
+    if($result){
+        echo json_encode($result);
+    }
+    else{
+        die("There was an error loading the teacher profile");
+    }
+    
+}
+function loadProfileSess(){
+    session_start();
+    $id = $_SESSION["id"];
     $result = loadTeacherProfile($id);
     if($result){
         echo json_encode($result);
