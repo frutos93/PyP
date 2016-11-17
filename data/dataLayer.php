@@ -4,9 +4,9 @@ function connectionToDataBase()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "";
     $dbname = "pypdb";
-    $conn = new \mysqli($servername, $username, $password, $dbname, 8889);
+    $conn = new \mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         return null;
     } else {
