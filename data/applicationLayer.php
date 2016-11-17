@@ -56,6 +56,9 @@ switch ($action) {
     case "UPDATE_PROY":
         updateProyecto();
         break;
+    case "LOAD_PROJ":
+        loadProjects();
+        break;
 }
 
 function updatePerfil(){
@@ -98,6 +101,15 @@ function updateProyecto(){
      
 }
 
+function loadProjects(){
+    $result = loadProjectIndex();
+     if($result){
+        echo json_encode($result);
+    }
+    else{
+        die("There was an error loading the teachers2");
+    }
+}
 function loadTeachers(){
     $result = loadTeacherInformation();
     if($result){

@@ -3,44 +3,39 @@ $(document).ready(function () {
         "action": "LOAD_SCHOOL"
     }
     $.ajax({
-        url: "data/applicationLayer.php",
-        type: "POST",
-        data: dataToSend,
-        dataType: "json",
-        success: function (jsonResponse) {
+        url: "data/applicationLayer.php"
+        , type: "POST"
+        , data: dataToSend
+        , dataType: "json"
+        , success: function (jsonResponse) {
             var newHTMLContent = '';
             $.each(jsonResponse, function (index) {
                 newHTMLContent += "<tr><td>" + jsonResponse[index].nombre + "</td></tr>";
             });
             $('#schoolBody').append(newHTMLContent);
-        }, error: function (errorMsg) {
-
         }
+        , error: function (errorMsg) {}
     });
-
     var dataToSend = {
         "action": "LOAD_AREA"
     }
     $.ajax({
-        url: "data/applicationLayer.php",
-        type: "POST",
-        data: dataToSend,
-        dataType: "json",
-        success: function (jsonResponse) {
+        url: "data/applicationLayer.php"
+        , type: "POST"
+        , data: dataToSend
+        , dataType: "json"
+        , success: function (jsonResponse) {
             var newHTMLContent = '';
             $.each(jsonResponse, function (index) {
                 newHTMLContent += "<tr><td>" + jsonResponse[index].nombre + "</td></tr>";
             });
             $('#areaBody').append(newHTMLContent);
-        }, error: function (errorMsg) {
-
         }
+        , error: function (errorMsg) {}
     });
-
     var dataToSend = {
         "action": "LOAD_TEACH"
     }
-
     $.ajax({
         url: "data/applicationLayer.php"
         , type: "POST"
@@ -58,9 +53,31 @@ $(document).ready(function () {
             console.log(errorMsg);
         }
     });
-    
-    $('#tableBody').on('click','.teacherInfo',function(event){
-        localStorage.setItem('teachID',$(this).data('id'));
+    var dataToSend = {
+        "action": "LOAD_PROJ"
+    }
+    $.ajax({
+        url: "data/applicationLayer.php"
+        , type: "POST"
+        , data: dataToSend
+        , dataType: "json"
+        , success: function (jsonResponse) {
+            var newHTMLContent = "";
+            $.each(jsonResponse, function (index) {
+                newHTMLContent += "<tr><td><a href='projectInformation.html' class='proyInfo' data-id='" + jsonResponse[index].id + "'>" + jsonResponse[index].nombre + "</a></td><td>" + jsonResponse[index].estado + "</td><td>" + jsonResponse[index].cupo + "</td><td>" + jsonResponse[index].descripcion + "</td></tr>";
+            });
+            $("#projectBody").append(newHTMLContent);
+            $('#projectTable').DataTable();
+        }
+        , error: function (errorMsg) {
+            $('#projectTable').hide();
+            $('h1').text(errorMsg.responseText);
+        }
     });
-
+    $('#tableBody').on('click', '.proyInfo', function (event) {
+        localStorage.setItem('proyID', $(this).data('id'));
+    });
+    $('#tableBody').on('click', '.teacherInfo', function (event) {
+        localStorage.setItem('teachID', $(this).data('id'));
+    });
 });

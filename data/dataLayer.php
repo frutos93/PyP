@@ -36,6 +36,25 @@ function loadTeacherInformation()
     }
 }
 
+function loadProjectIndex(){
+    $conn = connectionToDataBase();
+    if($conn != null){
+        $sql = "SELECT id, nombre, descripcion FROM proyecto";
+        $result = $conn->query($sql);
+         if($result->num_rows>0) {
+            $response = array();
+            while($row = $result->fetch_assoc()){
+                array_push($response, array("id" => $row["id"], 'nombre'=>$row['nombre'], 'descripcion' => $row['descripcion']));
+            }
+            return $response;
+        } else{
+            die("There was an error loading the schools");
+        }
+    }
+    else{
+        die("There was an error with the database connection");
+    }
+}
 function loadSchoolInformation(){
     $conn = connectionToDataBase();
     if($conn != null){
