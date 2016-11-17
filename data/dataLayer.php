@@ -4,9 +4,9 @@ function connectionToDataBase()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "";
     $dbname = "pypdb";
-    $conn = new \mysqli($servername, $username, $password, $dbname, 8889);
+    $conn = new \mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         return null;
     } else {
@@ -179,7 +179,7 @@ function attemptLogin($username, $passwrd){
             $_SESSION['id'] = $userID;	
             
             $conn -> close();
-            return array("status" => "SUCCESS" , "nombre"=>$nombre, "email"=>$correo);
+            return array("status" => "SUCCESS");
         }
         else{
             $conn -> close();
@@ -217,6 +217,36 @@ function loadTeacherProjects($id){
         die('There was an error with the database connection');
     }
 }
+
+function attemptChecaSesion(){
+
+	session_start();
+
+	if (isset($_SESSION["username"]) && isset($_SESSION["id"]))
+	{
+		return array("status" => "SUCCESS", "username"=>$_SESSION['username'],"id"=>$_SESSION['id']);
+	}
+	else
+	{
+		header('HTTP/1.1 406 Session has expired, you will be redirected to the login');
+		die("Session has expired! You will be redirected to the login.");
+	}
+}
+
+function attemptTerminaSesion(){
+
+	session_start();
+
+    if (isset($_SESSION["username"]) && isset($_SESSION["id"])) {
+        unset($_SESSION["username"]);
+        unset($_SESSION["id"]);
+
+    }
+
+    session_destroy();
+    return array("status" => "SUCCESS");
+}
+
 
 
 /*

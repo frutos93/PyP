@@ -38,6 +38,12 @@ switch ($action) {
     case "LOAD_PROY_INFO":
         loadProjectInfo();
         break;
+    case "CHECA-SESION":
+        loadChecaSesion();
+        break;
+    case "TERMINA-SESION":
+        loadTerminaSesion();
+        break;
 }
 
 function loadTeachers(){
@@ -88,7 +94,7 @@ function loadGrupoOpcion(){
         echo json_encode($result);
     }
     else{
-        die("There was an error loading the invetigation areas");
+        die("There was an error loading the invetigation groups");
     }
 }
 
@@ -120,7 +126,7 @@ function loginFunction(){
 	$result = attemptLogin($username, $passwrd);
 
 	if ($result["status"] == "SUCCESS"){
-		echo json_encode(array("message" => "Login Successful", "nombre"=>$result["nombre"], "email"=>$result["email"]));
+		echo json_encode(array("message" => "Login Exitoso"));
 	}	
 	else{
 		header('HTTP/1.1 500' . $result["status"]);
@@ -149,4 +155,25 @@ function loadProjectInfo(){
         die('There was an error loading the project information.');
     }
 }
+
+function loadChecaSesion(){
+    $result = attemptChecaSesion();
+    if ($result["status"] == "SUCCESS"){
+		echo json_encode(array("message" => "Sesion exitosa", "username" => $result["username"], "id" => $result["id"],));
+	}	
+    else{
+        die("There was an error checking for a session");
+    }
+}
+
+function loadTerminaSesion(){
+    $result = attemptTerminaSesion();
+    if ($result["status"] == "SUCCESS"){
+		echo json_encode(array("message" => "Sesion exitosa"));
+	}	
+    else{
+        die("There was an error checking for a session");
+    }
+}
+
 ?>
