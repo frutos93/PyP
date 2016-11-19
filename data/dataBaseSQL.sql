@@ -84,7 +84,6 @@ CREATE TABLE linea_investigacion(
 );
 
 INSERT INTO linea_investigacion (id, id_grupo_investigacion, name) VALUES
-(1, 1, 'Whatever name'),
 (2, 34, 'etica y responsabilidad social'),
 (3, 34, 'Modelos de desarrollo de liderazgo responsable y sostenible'),
 (4, 34, 'Emprendimiento social, corporativo y start ups de alto valor'),
@@ -110,7 +109,7 @@ CREATE TABLE profesor (
 );
 
 INSERT INTO profesor (id, id_grupo_investigacion, nombre, oficina, telefono, correo, username, passwrd) VALUES
-(2, 1, 'Teno', 'A3 301', 'abc 123', 'geteca@gmail.com', 'tenoblanco123', 'tenodark'),
+(2, 29, 'Teno', 'A3 301', 'abc 123', 'geteca@gmail.com', 'tenoblanco123', 'tenodark'),
 (3, 31, 'Bryan William Husted Corregan', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'bhusted@itesm.mx', 'brywill61', 'chocolatte'),
 (4, 23, 'Dora Elvira Garcia Gonzalez', 'A3 301', '+52 (55) 5483 2020', 'dora.garcia@itesm.mx', 'dorarara20', 'diamondcrash'),
 (5, 22, 'Francisco Javier Carrillo Gamboa', 'A3 301', '+52 (81) 8625 6000 ext. 6146', 'fjcarrillo@itesm.mx', 'javigambo46', 'liquidance'),
@@ -146,8 +145,8 @@ CREATE TABLE proyecto (
 );
 
 INSERT INTO proyecto (id, nombre, id_profesor, id_linea_investigacion,estado, cupo_limite, descripcion) VALUES
-(1, 'Algo de igem', 1, 1, 'terminado', 60, 'whatever'),
-(2, 'Algo de igem', 2, 1, 'cerrado', 60, 'whatever'),
-(3, 'Otra cosa de igem', 2, 1, 'abierto', 60, 'whatever'),
-(4, 'IGEM', 1, 3, 'abierto', 15, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut '),
-(5, 'Proyecto Social y etica', 1, 4, 'abierto', 5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ');
+(1, 'Cursos motivacionales HEB', 2, 13, 'terminado', 7, 'Reunirse en HEB Garza Sada los viernes y dar platicas en la Sala de Juntas de sus oficinas para platicar de sus'),
+(2, 'Personajes del TEC', 7, 5, 'terminado', 20, 'Realizar dibujos a base de modelos de trabajadores del tec que generalmente no vemos (jardineros, guardias, cocineros, mantenimiento) y realizar un poster que de el mensaje de que se deben apreciar mas.'),
+(3, 'Cursos de Robotica', 2, 6, 'abierto', 40, 'Dar cursos de robotica en escuelas de bajos recursos.'),
+(4, 'IGEM', 6, 3, 'abierto', 15, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut '),
+(5, 'Visitas a asilos en Monterrey', 11, 2, 'abierto', 50, 'Realizar visitas a asilos, proveer de cuidado de los viejitos y pasar el tiempocon ellos.');

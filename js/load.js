@@ -74,7 +74,7 @@ $(document).ready(function () {
             $('h1').text(errorMsg.responseText);
         }
     });
-    $('#tableBody').on('click', '.proyInfo', function (event) {
+    $('#projectBody').on('click', '.proyInfo', function (event) {
         localStorage.setItem('proyID', $(this).data('id'));
     });
     $('#tableBody').on('click', '.teacherInfo', function (event) {
